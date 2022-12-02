@@ -19,7 +19,7 @@ public class MenuOption {
         System.out.println("## Manipulador de imágenes ##");
         System.out.println("1) Visualizar imagen.");
         System.out.println("2) Ver tipo de imagen.");
-        System.out.println("3) Imagen comprimida?");
+        System.out.println("3) ¿Imagen comprimida?");
         System.out.println("4) Modificar imagen.");
         System.out.println("5) Crear nueva imagen.");
         System.out.println("6) Salir.");
@@ -43,7 +43,10 @@ public class MenuOption {
             }
         } while (error) ;
 
-        if (option == 2){
+        if(option == 1){
+            System.out.println(this.image.toString());
+        }
+        else if(option == 2){
             MenuTypeImage menuTypeImage = new MenuTypeImage(this.image);
             menuTypeImage.showMenuTypeImage();
         } else if(option == 3){

@@ -48,7 +48,19 @@ public class MenuModify {
             System.out.println(this.image.toString());
             System.out.println(this.image.flipH());
             System.out.println(this.image.toString());
-        } else if (option == 6){
+        } else if(option == 2){
+            System.out.println(this.image.toString());
+            System.out.println(this.image.flipV());
+            System.out.println(this.image.toString());
+        } else if(option == 3){
+            MenuCrop menuCrop = new MenuCrop(this.image);
+            menuCrop.showMenuCrop();
+        } else if(option == 4){
+            System.out.println(this.image.toString());
+            System.out.println(this.image.imgRGBToHex());
+            System.out.println(this.image.toString());
+        }
+        else if (option == 6){
             System.out.println(this.image.toString());
             System.out.println(this.image.rotate90());
             System.out.println(this.image.toString());

@@ -3,26 +3,27 @@ package org.example.cli;
 import org.example.models.Image_20223138_ArmijoPalominos;
 import org.example.models.Pixbit_20223138_ArmijoPalominos;
 import org.example.models.Pixel;
+import org.example.models.Pixhex_20223138_ArmijoPalominos;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MenuPixbit {
+public class MenuPixhex {
 
-    public void showMenuPixbit(){
+    public void showMenuPixhex(){
 
         int width = 0;
         int height = 0;
         List<Pixel> pixels = new ArrayList<>();
         int x = 0;
         int y = 0;
-        int bit = 0;
+        String hex;
         int depth = 0;
         boolean error;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("## Crear imagen pixbit ##");
+        System.out.println("## Crear imagen pixhex ##");
 
         do{
             error = false;
@@ -104,21 +105,9 @@ public class MenuPixbit {
                     }
                 } while (error);
 
-                do{
-                    error = false;
-                    System.out.println("Ingrese el bit (0/1): ");
-                    String auxBit = sc.nextLine();
-                    try {
-                        bit = Integer.parseInt(auxBit);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Debes ingresar un numero entero.");
-                        error = true;
-                    }
-                    if (!error && (bit < 0 || bit > 1)) {
-                        System.out.println("Debe ingresar un bit valido.");
-                        error = true;
-                    }
-                } while (error);
+
+                System.out.println("Ingrese el numero hexadecimal: ");
+                hex = sc.nextLine();
 
                 do{
                     error = false;
@@ -136,7 +125,7 @@ public class MenuPixbit {
                     }
                 } while (error);
 
-                Pixbit_20223138_ArmijoPalominos pixel = new Pixbit_20223138_ArmijoPalominos(x,y,depth,bit);
+                Pixhex_20223138_ArmijoPalominos pixel = new Pixhex_20223138_ArmijoPalominos(x,y,depth,hex);
 
                 pixels.add(pixel);
             }

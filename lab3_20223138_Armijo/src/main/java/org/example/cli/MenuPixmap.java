@@ -1,6 +1,9 @@
 package org.example.cli;
 
+import org.example.models.Image_20223138_ArmijoPalominos;
+import org.example.models.Pixbit_20223138_ArmijoPalominos;
 import org.example.models.Pixel;
+import org.example.models.Pixmap_20223138_ArmijoPalominos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,7 @@ public class MenuPixmap {
         boolean error;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("## Crear imagen pixbit ##");
+        System.out.println("## Crear imagen pixmap ##");
 
         do{
             error = false;
@@ -58,8 +61,8 @@ public class MenuPixmap {
 
         int count = 1;
 
-        for(int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
+        for(int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
 
                 System.out.println("## Pixel " + count + "/" + (width*height) + " ##");
                 count = count + 1;
@@ -152,9 +155,31 @@ public class MenuPixmap {
                     }
                 } while (error);
 
+                do{
+                    error = false;
+                    System.out.println("Ingrese la profundidad: ");
+                    String auxDepth = sc.nextLine();
+                    try {
+                        depth = Integer.parseInt(auxDepth);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Debes ingresar un numero entero.");
+                        error = true;
+                    }
+                    if (!error && depth < 0) {
+                        System.out.println("Debe ingresar un valor positivo.");
+                        error = true;
+                    }
+                } while (error);
+
+                Pixmap_20223138_ArmijoPalominos pixel = new Pixmap_20223138_ArmijoPalominos(x, y, depth, r,g,b);
+                pixels.add(pixel);
 
             }
         }
 
+        Image_20223138_ArmijoPalominos image = new Image_20223138_ArmijoPalominos(width, height, pixels);
+        System.out.println("La imagen ha sido creada con exito.\n");
+        MenuOption menuOption = new MenuOption(image);
+        menuOption. showMenuOption();
     }
 }

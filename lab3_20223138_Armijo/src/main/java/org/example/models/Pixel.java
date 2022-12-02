@@ -3,6 +3,12 @@ package org.example.models;
 public abstract class Pixel {
 
     public abstract int getBit();
+    public abstract int getR();
+    public abstract int getB();
+
+    public abstract int getG();
+    public abstract String getHex();
+
     private int x;
     private int y;
 

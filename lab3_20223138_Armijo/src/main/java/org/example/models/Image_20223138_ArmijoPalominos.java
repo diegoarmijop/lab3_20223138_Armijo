@@ -1,5 +1,6 @@
 package org.example.models;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,10 @@ public class Image_20223138_ArmijoPalominos {
     private static List<Pixel> pixels;
     private static int width = 0;
     private static int height = 0;
+
+    public static void setPixels(List<Pixel> pixels) {
+        Image_20223138_ArmijoPalominos.pixels = pixels;
+    }
 
     public static void setWidth(int width) {
         Image_20223138_ArmijoPalominos.width = width;
@@ -110,6 +115,39 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen ha sido rotada exitosamente.";
     }
 
+    public static String crop(int x1, int y1, int x2, int y2){
+
+        List<Pixel> pixelsAux = new ArrayList<>();
+
+        for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+            Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
+            if(p.getX() >= x1 && p.getX() <= x2 && p.getY() >= y1 && p.getY() <= y2){
+                pixelsAux.add(p);
+            }
+        }
+        Image_20223138_ArmijoPalominos.setPixels(pixelsAux);
+        return "Imagen crop.";
+    }
+
+    public String imgRGBToHex(){
+
+        Pixel pix = getFirstPixel();
+        List<Pixel> pixelsAux = new ArrayList<>();
+
+        if (pix instanceof Pixmap_20223138_ArmijoPalominos){
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
+                String hex = String.format("#%02x%02x%02x", p.getR(), p.getG(), p.getB());
+                Pixhex_20223138_ArmijoPalominos pixelAux = new Pixhex_20223138_ArmijoPalominos(p.getX(), p.getY(), p.getDepth(), hex);
+                pixelsAux.add(pixelAux);
+            }
+            Image_20223138_ArmijoPalominos.setPixels(pixelsAux);
+        }
+        return "La imagen no es RGB, ingrese una imagen valida.";
+    }
+
+
+
 
 
 
@@ -120,25 +158,74 @@ public class Image_20223138_ArmijoPalominos {
     public String toString () {
 
         String resultado = "Imagen de dimensiones " + Image_20223138_ArmijoPalominos.getWidth() + "x" + Image_20223138_ArmijoPalominos.getHeight() + "\n";
-        for (int i = 0; i < Image_20223138_ArmijoPalominos.getHeight(); i++) {
-            int iConstante = i;
-            for (int j = 0; j < Image_20223138_ArmijoPalominos.getWidth(); j++) {
-                int jConstante = j;
-                Optional<Pixel> posicionEncontrada = pixels.stream()
-                        .filter(p -> p.getY() == iConstante)
-                        .filter(p -> p.getX() == jConstante)
-                        .findFirst();
-                if (posicionEncontrada.isPresent()) {
-                    resultado += "|" + posicionEncontrada.get().getBit();
+        Pixel pix = getFirstPixel();
+        if (pix instanceof Pixbit_20223138_ArmijoPalominos){
+            for (int i = 0; i < Image_20223138_ArmijoPalominos.getHeight(); i++) {
+                int iConstante = i;
+                for (int j = 0; j < Image_20223138_ArmijoPalominos.getWidth(); j++) {
+                    int jConstante = j;
+                    Optional<Pixel> posicionEncontrada = pixels.stream()
+                            .filter(p -> p.getX() == iConstante)
+                            .filter(p -> p.getY() == jConstante)
+                            .findFirst();
+                    if (posicionEncontrada.isPresent()) {
+                        resultado += "|" + posicionEncontrada.get().getBit();
+                    }
+                    else {
+                        resultado += "| ";
+                    }
                 }
-                //else {
-                   // resultado += "| ";
-                //}
+                resultado += "|\n";
             }
-            resultado += "|\n";
+            //return resultado;
+        }else if (pix instanceof Pixmap_20223138_ArmijoPalominos){
+
+            for (int i = 0; i < Image_20223138_ArmijoPalominos.getHeight(); i++) {
+                int iConstante = i;
+                for (int j = 0; j < Image_20223138_ArmijoPalominos.getWidth(); j++) {
+                    int jConstante = j;
+                    Optional<Pixel> posicionEncontrada = pixels.stream()
+                            .filter(p -> p.getX() == iConstante)
+                            .filter(p -> p.getY() == jConstante)
+                            .findFirst();
+                    if (posicionEncontrada.isPresent()) {
+                        resultado += "|" + posicionEncontrada.get().getR() + " " + posicionEncontrada.get().getG() + " " + posicionEncontrada.get().getB();
+                    }
+                    else {
+                        resultado += "| ";
+                    }
+                }
+                resultado += "|\n";
+            }
+
+        }else{
+            for (int i = 0; i < Image_20223138_ArmijoPalominos.getHeight(); i++) {
+                int iConstante = i;
+                for (int j = 0; j < Image_20223138_ArmijoPalominos.getWidth(); j++) {
+                    int jConstante = j;
+                    Optional<Pixel> posicionEncontrada = pixels.stream()
+                            .filter(p -> p.getX() == iConstante)
+                            .filter(p -> p.getY() == jConstante)
+                            .findFirst();
+                    if (posicionEncontrada.isPresent()) {
+                        resultado += "|" + posicionEncontrada.get().getHex();
+                    }
+                    else {
+                        resultado += "| ";
+                    }
+                }
+                resultado += "|\n";
+            }
+            //return resultado;
+
         }
         return resultado;
     }
+
+
+
+
+
 
     public static int getWidth() {
         return width;

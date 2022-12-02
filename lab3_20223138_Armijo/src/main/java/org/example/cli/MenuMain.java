@@ -35,13 +35,14 @@ public class MenuMain {
         } while (error);
 
         if (option == 1){
-
             MenuPixbit menuPixbit = new MenuPixbit();
             menuPixbit.showMenuPixbit();
-
         } else if (option == 2){
-
+            MenuPixmap menuPixmap = new MenuPixmap();
+            menuPixmap.showMenuPixmap();
+        } else{
+            MenuPixhex menuPixhex = new MenuPixhex();
+            menuPixhex.showMenuPixhex();
         }
-
     }
 }
