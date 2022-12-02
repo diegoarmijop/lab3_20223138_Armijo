@@ -12,4 +12,9 @@ public class Pixmap_20223138_ArmijoPalominos extends Pixel {
         this.g = g;
         this.b = b;
     }
+
+    @Override
+    public int getBit() {
+        return 0;
+    }
 }
