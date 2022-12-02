@@ -25,7 +25,10 @@ public class MenuModify {
         System.out.println("4) imgRGBToHex.");
         System.out.println("5) image histogram.");
         System.out.println("6) rotate90.");
-        System.out.println("7) Volver.");
+        System.out.println("7) changePixel.");
+        System.out.println("8) invertColorBit.");
+        System.out.println("9) invertColorRGB.");
+        System.out.println("10) Volver.");
 
 
         do {
@@ -59,13 +62,23 @@ public class MenuModify {
             System.out.println(this.image.toString());
             System.out.println(this.image.imgRGBToHex());
             System.out.println(this.image.toString());
-        }
-        else if (option == 6){
+        }else if (option == 5){
+            System.out.println(this.image.histogram());
+        } else if (option == 6){
             System.out.println(this.image.toString());
             System.out.println(this.image.rotate90());
             System.out.println(this.image.toString());
+        }else if(option == 7){
+            MenuChangePixel menuChangePixel = new MenuChangePixel(this.image);
+            menuChangePixel.showMenuChangePixel();
+        } else if(option == 8){
+            System.out.println(this.image.toString());
+            System.out.println(this.image.invertColorBit());
+            System.out.println(this.image.toString());
+        }else if(option == 9){
+            System.out.println(this.image.toString());
+            System.out.println(this.image.invertColorRGB());
+            System.out.println(this.image.toString());
         }
-
     }
-
 }

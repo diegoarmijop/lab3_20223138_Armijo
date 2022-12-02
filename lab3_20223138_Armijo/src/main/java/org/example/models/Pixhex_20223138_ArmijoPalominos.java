@@ -8,9 +8,20 @@ public class Pixhex_20223138_ArmijoPalominos extends Pixel {
         return hex;
     }
 
+    public void setHex(String hex) {
+        this.hex = hex;
+    }
+
     public Pixhex_20223138_ArmijoPalominos(int x, int y, int depth, String hex) {
         super(x, y, depth);
         this.hex = hex;
+    }
+
+
+
+    @Override
+    public void setBit(int bit) {
+
     }
 
     @Override
@@ -26,6 +37,26 @@ public class Pixhex_20223138_ArmijoPalominos extends Pixel {
     @Override
     public int getB() {
         return 0;
+    }
+
+    @Override
+    public void setR(int r) {
+
+    }
+
+    @Override
+    public void setG(int g) {
+
+    }
+
+    @Override
+    public void setB(int b) {
+
+    }
+
+    @Override
+    public void setR(String hex) {
+
     }
 
     @Override

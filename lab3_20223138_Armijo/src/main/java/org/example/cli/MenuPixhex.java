@@ -5,11 +5,19 @@ import org.example.models.Pixbit_20223138_ArmijoPalominos;
 import org.example.models.Pixel;
 import org.example.models.Pixhex_20223138_ArmijoPalominos;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
+
 
 public class MenuPixhex {
+
+    public static boolean validate(String text) {
+        return text.matches("#[0-9A-Fa-f]{6}");
+    }
 
     public void showMenuPixhex(){
 
@@ -59,55 +67,24 @@ public class MenuPixhex {
 
         int count = 1;
 
-        for(int i = 0; i < height; i++){
-            for(int j = 0; j < width; j++){
+        for(x = 0; x < height; x++){
+            for(y = 0; y < width; y++){
 
                 System.out.println("## Pixel " + count + "/" + (width*height) + " ##");
                 count = count + 1;
+                System.out.println("## Pixel en la posición (" + x + "," + y + ") ##");
 
                 do{
                     error = false;
-                    System.out.println("Ingrese la coordenada X: ");
-                    String coordX = sc.nextLine();
-                    try {
-                        x = Integer.parseInt(coordX);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Debes ingresar un numero entero.");
+                    System.out.println("Ingrese el numero hexadecimal: ");
+                    hex = sc.nextLine();
+
+                    if (hex.length() != 7 || !validate(hex) ) {
+                        System.out.println("Debe un numero hexadecimal valido");
                         error = true;
                     }
-                    if (!error && x < 0) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                    if (!error && x > height) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
+
                 } while (error);
-
-                do{
-                    error = false;
-                    System.out.println("Ingrese la coordenada Y: ");
-                    String coordY = sc.nextLine();
-                    try {
-                        y = Integer.parseInt(coordY);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Debes ingresar un numero entero.");
-                        error = true;
-                    }
-                    if (!error && y < 0) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                    if (!error && y > width) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                } while (error);
-
-
-                System.out.println("Ingrese el numero hexadecimal: ");
-                hex = sc.nextLine();
 
                 do{
                     error = false;

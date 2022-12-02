@@ -58,51 +58,12 @@ public class MenuPixbit {
 
         int count = 1;
 
-        for(int i = 0; i < height; i++){
-            for(int j = 0; j < width; j++){
+        for(x = 0; x < height; x++){
+            for(y = 0; y < width; y++){
 
                 System.out.println("## Pixel " + count + "/" + (width*height) + " ##");
                 count = count + 1;
-
-                do{
-                    error = false;
-                    System.out.println("Ingrese la coordenada X: ");
-                    String coordX = sc.nextLine();
-                    try {
-                        x = Integer.parseInt(coordX);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Debes ingresar un numero entero.");
-                        error = true;
-                    }
-                    if (!error && x < 0) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                    if (!error && x > height) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                } while (error);
-
-                do{
-                    error = false;
-                    System.out.println("Ingrese la coordenada Y: ");
-                    String coordY = sc.nextLine();
-                    try {
-                        y = Integer.parseInt(coordY);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Debes ingresar un numero entero.");
-                        error = true;
-                    }
-                    if (!error && y < 0) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                    if (!error && y > width) {
-                        System.out.println("Debe ingresar una coordenada valida.");
-                        error = true;
-                    }
-                } while (error);
+                System.out.println("## Pixel en la posición (" + x + "," + y + ") ##");
 
                 do{
                     error = false;
@@ -148,5 +109,4 @@ public class MenuPixbit {
         menuOption. showMenuOption();
 
     }
-
 }

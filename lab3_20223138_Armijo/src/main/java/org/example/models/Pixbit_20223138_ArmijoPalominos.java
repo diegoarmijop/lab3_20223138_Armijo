@@ -2,7 +2,7 @@ package org.example.models;
 
 public class Pixbit_20223138_ArmijoPalominos extends Pixel {
 
-    final int bit;
+    int bit;
 
     public int getBit() {
         return bit;
@@ -19,6 +19,31 @@ public class Pixbit_20223138_ArmijoPalominos extends Pixel {
     }
 
     @Override
+    public void setHex(String hex) {
+
+    }
+
+    @Override
+    public void setR(String hex) {
+
+    }
+
+    @Override
+    public void setR(int r) {
+
+    }
+
+    @Override
+    public void setG(int g) {
+
+    }
+
+    @Override
+    public void setB(int b) {
+
+    }
+
+    @Override
     public int getG() {
         return 0;
     }
@@ -26,6 +51,10 @@ public class Pixbit_20223138_ArmijoPalominos extends Pixel {
     @Override
     public String getHex() {
         return null;
+    }
+
+    public void setBit(int bit) {
+        this.bit = bit;
     }
 
     public Pixbit_20223138_ArmijoPalominos(int x, int y, int depth, int bit) {

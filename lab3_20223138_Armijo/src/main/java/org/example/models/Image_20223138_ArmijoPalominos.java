@@ -1,8 +1,12 @@
+
+
 package org.example.models;
 
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Image_20223138_ArmijoPalominos {
 
@@ -134,6 +138,7 @@ public class Image_20223138_ArmijoPalominos {
         Pixel pix = getFirstPixel();
         List<Pixel> pixelsAux = new ArrayList<>();
 
+
         if (pix instanceof Pixmap_20223138_ArmijoPalominos){
             for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
                 Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
@@ -142,17 +147,180 @@ public class Image_20223138_ArmijoPalominos {
                 pixelsAux.add(pixelAux);
             }
             Image_20223138_ArmijoPalominos.setPixels(pixelsAux);
+        }else{
+            System.out.println("La imagen no es RGB, ingrese una imagen valida.");
+
         }
-        return "La imagen no es RGB, ingrese una imagen valida.";
+        return "-------- imagen transformada exitosamente --------";
+    }
+
+    public String histogram(){
+
+        Pixel pix = getFirstPixel();
+        List<Integer> values = new ArrayList<Integer>();
+        List<Integer> bit0 = new ArrayList<Integer>();
+        List<Integer> bit1 = new ArrayList<Integer>();
+        List<Integer> red = new ArrayList<Integer>();
+        List<Integer> green = new ArrayList<Integer>();
+        List<Integer> blue = new ArrayList<Integer>();
+        List<String> hex = new ArrayList<String>();
+
+
+        if (pix instanceof Pixbit_20223138_ArmijoPalominos){
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
+                values.add(p.getBit());
+            }
+            for(int i = 0; i < values.size(); i++){
+                if(values.get(i) == 0){
+                    bit0.add(values.get(i));
+                } else{
+                    bit1.add(1);
+                }
+            }
+            System.out.println("------------ HISTOGRAMA IMAGE PIXBIT ------------");
+            System.out.println("BIT 0 = " + bit0.size() + " | BIT 1 = " + bit1.size());
+
+        } else if (pix instanceof Pixmap_20223138_ArmijoPalominos){
+
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
+                red.add(p.getR());
+                green.add(p.getG());
+                blue.add(p.getB());
+            }
+
+            List<String> redString = red.stream().map(Object::toString)
+                    .collect(Collectors.toList());
+
+            List<String> greenString = green.stream().map(Object::toString)
+                    .collect(Collectors.toList());
+
+            List<String> blueString = blue.stream().map(Object::toString)
+                    .collect(Collectors.toList());
+
+            Map<String, Integer> hm = new HashMap<String, Integer>();
+            Map<String, Integer> greenAux = new HashMap<String, Integer>();
+            Map<String, Integer> blueAux = new HashMap<String, Integer>();
+
+            for (String i : redString) {
+                Integer j = hm.get(i);
+                hm.put(i, (j == null) ? 1 : j + 1);
+            }
+
+            for (String i : greenString) {
+                Integer j = greenAux.get(i);
+                greenAux.put(i, (j == null) ? 1 : j + 1);
+            }
+
+            for (String i : blueString) {
+                Integer j = blueAux.get(i);
+                blueAux.put(i, (j == null) ? 1 : j + 1);
+            }
+
+            System.out.println("------------ HISTOGRAMA IMAGE PIXMAP ------------");
+            System.out.println("------------------ COLOR R ------------------");
+            for (Map.Entry<String, Integer> val : hm.entrySet()) {
+                System.out.println("Numero " + val.getKey() + " "
+                        + "se repite"
+                        + ": " + val.getValue() + " veces.");
+            }
+
+            System.out.println("------------------ COLOR G ------------------");
+
+            for (Map.Entry<String, Integer> val : greenAux.entrySet()) {
+                System.out.println("Numero " + val.getKey() + " "
+                        + "se repite"
+                        + ": " + val.getValue() + " veces.");
+            }
+            System.out.println("------------------ COLOR B ------------------");
+            for (Map.Entry<String, Integer> val : blueAux.entrySet()) {
+                System.out.println("Numero " + val.getKey() + " "
+                        + "se repite"
+                        + ": " + val.getValue() + " veces.");
+            }
+
+        } else{
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
+                hex.add(p.getHex());
+            }
+
+            Map<String, Integer> hm = new HashMap<String, Integer>();
+
+            for (String i : hex) {
+                Integer j = hm.get(i);
+                hm.put(i, (j == null) ? 1 : j + 1);
+            }
+            System.out.println("------------ HISTOGRAMA IMAGE PIXHEX ------------");
+            for (Map.Entry<String, Integer> val : hm.entrySet()) {
+                System.out.println("Numero hexadecimal " + val.getKey() + " "
+                        + "se repite"
+                        + ": " + val.getValue() + " veces.");
+            }
+        }
+        return "----------------- HISTOGRAMA CREADO EXITOSAMENTE -----------------";
     }
 
 
+    public String changePixel(Pixel pixel){
 
+        if(pixel instanceof Pixbit_20223138_ArmijoPalominos){
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                if(pixel.getX() == Image_20223138_ArmijoPalominos.getPixels().get(i).getX() && pixel.getY() == Image_20223138_ArmijoPalominos.getPixels().get(i).getY()){
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setBit(pixel.getBit());
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setDepth(pixel.getDepth());
+                }
+            }
+        }else if(pixel instanceof Pixmap_20223138_ArmijoPalominos){
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                if(pixel.getX() == Image_20223138_ArmijoPalominos.getPixels().get(i).getX() && pixel.getY() == Image_20223138_ArmijoPalominos.getPixels().get(i).getY()){
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setR(pixel.getR());
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setG(pixel.getG());
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setB(pixel.getB());
+                }
+            }
 
+        }else{
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                if(pixel.getX() == Image_20223138_ArmijoPalominos.getPixels().get(i).getX() && pixel.getY() == Image_20223138_ArmijoPalominos.getPixels().get(i).getY()){
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setHex(pixel.getHex());
+                    Image_20223138_ArmijoPalominos.getPixels().get(i).setDepth(pixel.getDepth());
+                }
+            }
+        }
+        return "------ SE HA MODIFICADO EL PIXEL EXITOSAMENTE ------";
+    }
 
+    public String invertColorBit(){
 
+        Pixel p = getFirstPixel();
 
+        if (p instanceof Pixbit_20223138_ArmijoPalominos){
+            for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+                int newbit = Math.abs(Image_20223138_ArmijoPalominos.getPixels().get(i).getBit() - 1);
+                Image_20223138_ArmijoPalominos.getPixels().get(i).setBit(newbit);
+            }
+        }else{
+            System.out.println("Ingrese una imagen de tipo pixbit.");
+        }
+        return "---------- IMAGEN CON LOS BITS INVERTIDOS CORRECTAMENTE ---------";
+    }
 
+    public String invertColorRGB() {
+        Pixel p = getFirstPixel();
+        if (p instanceof Pixmap_20223138_ArmijoPalominos) {
+            for (int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++) {
+                int newR = Math.abs(Image_20223138_ArmijoPalominos.getPixels().get(i).getR() - 255);
+                int newG = Math.abs(Image_20223138_ArmijoPalominos.getPixels().get(i).getG() - 255);
+                int newB = Math.abs(Image_20223138_ArmijoPalominos.getPixels().get(i).getB() - 255);
+                Image_20223138_ArmijoPalominos.getPixels().get(i).setR(newR);
+                Image_20223138_ArmijoPalominos.getPixels().get(i).setG(newG);
+                Image_20223138_ArmijoPalominos.getPixels().get(i).setB(newB);
+            }
+        }
+        return "---- IMAGEN CON LOS COLORES RGB INVERTIDOS ----";
+    }
 
     @Override
     public String toString () {
@@ -221,11 +389,6 @@ public class Image_20223138_ArmijoPalominos {
         }
         return resultado;
     }
-
-
-
-
-
 
     public static int getWidth() {
         return width;
