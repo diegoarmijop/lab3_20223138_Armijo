@@ -1,44 +1,47 @@
 package org.example.cli;
 
+import org.example.models.Image_20223138_ArmijoPalominos;
+
 import java.util.Scanner;
 
 public class MenuMain {
 
-    public void showMenu(){
+    public void showMenuMain(){
 
-        System.out.println("### Manipulador de imagenes ###\n\n");
-        System.out.println("Escoja su opcion:\n");
-        System.out.println("1. Crear una imagen\n");
-        System.out.println("2. Modificar imagen\n");
-        System.out.println("3. Visualizar imagen\n");
+        System.out.println("## Manipulador de imágenes ##");
+        System.out.println("Para comenzar debes crear una imagen: ");
+        System.out.println("1) Crear imagen pixbit.");
+        System.out.println("2) Crear imagen pixmap.");
+        System.out.println("3) Crear imagen pixhex.");
 
-        Scanner sc = new Scanner(System.in);
-        boolean error = false;
         int option = 0;
+        Scanner sc = new Scanner(System.in);
+        boolean error;
 
-        do {
+        do{
             error = false;
-            System.out.println("INTRODUZCA SU OPCION: ");
+            System.out.println("Ingresa una opcion: ");
             String line = sc.nextLine();
             try {
                 option = Integer.parseInt(line);
             } catch (NumberFormatException e) {
-                System.out.println("Debe ingresar una opción válida.");
+                System.out.println("Debes ingresar una opcion valida.");
                 error = true;
             }
-            if (!error && (option > 3 || option < 1)){
-                System.out.println("Debe ingresar una opción válida");
+            if (!error && (option > 3 || option < 1)) {
+                System.out.println("Debe ingresar una opcion valida");
                 error = true;
             }
-        } while(error);
+        } while (error);
 
-        if(option == 1){
+        if (option == 1){
 
-            MenuCreateImage menuCreateImage = new MenuCreateImage();
-            menuCreateImage.showMenu();
+            MenuPixbit menuPixbit = new MenuPixbit();
+            menuPixbit.showMenuPixbit();
+
+        } else if (option == 2){
 
         }
 
     }
-
 }

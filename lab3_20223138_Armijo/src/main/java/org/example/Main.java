@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         MenuMain menuMain = new MenuMain();
-        menuMain.showMenu();
+        menuMain.showMenuMain();
 
     }
 }
