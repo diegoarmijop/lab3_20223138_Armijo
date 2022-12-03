@@ -1,18 +1,42 @@
-
+// Simulador de editor de imagenes en JAVA
 
 package org.example.models;
 
-import java.awt.*;
+//Se importan las clases que se utilizaran.
+//import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.function.Function;
+//import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Image_20223138_ArmijoPalominos {
-
+    //--------------------------------------------
+    // Atributos.
+    //--------------------------------------------
     private static List<Pixel> pixels;
     private static int width = 0;
     private static int height = 0;
+
+    //--------------------------------------------
+    // Constructor de image.
+    //--------------------------------------------
+    public Image_20223138_ArmijoPalominos(int width, int height, List<Pixel> pixels) {
+        this.width = width;
+        this.height = height;
+        this.pixels = pixels;
+    }
+
+    //--------------------------------------------
+    // Getters and Setters.
+    //--------------------------------------------
+
+    public static int getWidth() {
+        return width;
+    }
+
+    public static int getHeight() {
+        return height;
+    }
 
     public static void setPixels(List<Pixel> pixels) {
         Image_20223138_ArmijoPalominos.pixels = pixels;
@@ -26,12 +50,6 @@ public class Image_20223138_ArmijoPalominos {
         Image_20223138_ArmijoPalominos.height = height;
     }
 
-    public Image_20223138_ArmijoPalominos(int width, int height, List<Pixel> pixels) {
-        this.width = width;
-        this.height = height;
-        this.pixels = pixels;
-    }
-
     public static List<Pixel> getPixels() {
         return pixels;
     }
@@ -42,6 +60,13 @@ public class Image_20223138_ArmijoPalominos {
         return firstPixel;
     }
 
+    //--------------------------------------------
+    // Metodos.
+    //--------------------------------------------
+
+    //Metodo que verifica si una imagen es pixbit.
+    //Param: No tiene
+    //Salida: String
     public static String isBitmap(){
         Pixel p = getFirstPixel();
         if (p instanceof Pixbit_20223138_ArmijoPalominos){
@@ -50,6 +75,9 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen NO es un bitmap.";
     }
 
+    //Metodo que verifica si una imagen es un pixmap.
+    //Param: No tiene
+    //Salida: String
     public static String isPixmap(){
         Pixel p = getFirstPixel();
         if (p instanceof Pixmap_20223138_ArmijoPalominos){
@@ -58,6 +86,9 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen NO es un pixmap.";
     }
 
+    //Metodo que verifica si una imagen es un hexmap.
+    //Param: No tiene
+    //Salida: String
     public static String isHexmap(){
         Pixel p = getFirstPixel();
         if (p instanceof Pixhex_20223138_ArmijoPalominos){
@@ -66,6 +97,9 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen NO es un pixhex.";
     }
 
+    // Metodo que verifica si una imagen esta comprimida.
+    //Param: No tiene
+    //Salida: String
     public static String isCompressed(){
 
         int p = (Image_20223138_ArmijoPalominos.getWidth() * Image_20223138_ArmijoPalominos.getHeight());
@@ -77,6 +111,9 @@ public class Image_20223138_ArmijoPalominos {
         }
     }
 
+    // Metodo que permite invertir una imagen  horizontalmente.
+    //Param: No tiene
+    //Salida: String
     public String flipH(){
 
         int y = 0;
@@ -89,6 +126,9 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen ha sido modificada exitosamente.";
     }
 
+    // Metodo que permite invertir una imagen verticalmente.
+    //Param: No tiene
+    //Salida: String
     public String flipV(){
 
         int x = 0;
@@ -101,7 +141,9 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen ha sido modificada exitosamente.";
     }
 
-
+    // Metodo que permite rotar una imagen en 90 grados.
+    //Param: No tiene
+    //Salida: String
     public String rotate90(){
 
         int x = 0;
@@ -119,9 +161,14 @@ public class Image_20223138_ArmijoPalominos {
         return "La imagen ha sido rotada exitosamente.";
     }
 
+    // Metodo que permite recortar una imagen a partir de un cuadrante.
+    //Param: int X1, int X2, int Y1, int Y2
+    //Salida: String
     public static String crop(int x1, int y1, int x2, int y2){
 
         List<Pixel> pixelsAux = new ArrayList<>();
+        List<Integer> coordX = new ArrayList<Integer>();
+        List<Integer> coordY = new ArrayList<Integer>();
 
         for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
             Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
@@ -129,10 +176,34 @@ public class Image_20223138_ArmijoPalominos {
                 pixelsAux.add(p);
             }
         }
+
+        for(int i = 0; i < Image_20223138_ArmijoPalominos.getPixels().size(); i++){
+            Pixel p = Image_20223138_ArmijoPalominos.getPixels().get(i);
+            coordX.add(p.getX());
+            coordY.add(p.getY());
+        }
+
+        Collections.sort(coordX);
+        Collections.sort(coordY);
+
+        List<Integer> newCoordX = coordX.stream()
+                    .distinct()
+                    .collect(Collectors.toList());
+
+        List<Integer> newCoordY = coordY.stream()
+                    .distinct()
+                    .collect(Collectors.toList());
+
+        Image_20223138_ArmijoPalominos.setWidth(newCoordY.size());
+        Image_20223138_ArmijoPalominos.setHeight(newCoordX.size());
         Image_20223138_ArmijoPalominos.setPixels(pixelsAux);
-        return "Imagen crop.";
+
+        return "--------- IMAGEN CORTADA CORRECTAMENTE -----------";
     }
 
+    //Metodo que permite transformar una imagen RGB a Hexadecimal.
+    //Param: No tiene
+    //Salida: String
     public String imgRGBToHex(){
 
         Pixel pix = getFirstPixel();
@@ -154,6 +225,9 @@ public class Image_20223138_ArmijoPalominos {
         return "-------- imagen transformada exitosamente --------";
     }
 
+    //Metodo que permite crear un histogram para cada tipo de imagen.
+    //Param: No tiene
+    //Salida: String
     public String histogram(){
 
         Pixel pix = getFirstPixel();
@@ -262,7 +336,9 @@ public class Image_20223138_ArmijoPalominos {
         return "----------------- HISTOGRAMA CREADO EXITOSAMENTE -----------------";
     }
 
-
+    // Metodo que permite cambiar el pixel dentro de una imagen.
+    //Param: Pixel
+    //Salida: String
     public String changePixel(Pixel pixel){
 
         if(pixel instanceof Pixbit_20223138_ArmijoPalominos){
@@ -292,6 +368,9 @@ public class Image_20223138_ArmijoPalominos {
         return "------ SE HA MODIFICADO EL PIXEL EXITOSAMENTE ------";
     }
 
+    //Metodo que permite invertir el color bit de una imagen de tipo pixbit.
+    //Param: No tiene
+    //Salida: String
     public String invertColorBit(){
 
         Pixel p = getFirstPixel();
@@ -307,6 +386,9 @@ public class Image_20223138_ArmijoPalominos {
         return "---------- IMAGEN CON LOS BITS INVERTIDOS CORRECTAMENTE ---------";
     }
 
+    //Metodo que permite invertir el color de una imagen RGB.
+    //Param: No tiene
+    //Salida: String
     public String invertColorRGB() {
         Pixel p = getFirstPixel();
         if (p instanceof Pixmap_20223138_ArmijoPalominos) {
@@ -322,6 +404,8 @@ public class Image_20223138_ArmijoPalominos {
         return "---- IMAGEN CON LOS COLORES RGB INVERTIDOS ----";
     }
 
+
+    //Metodo que permite mostrar una imagen por salida.
     @Override
     public String toString () {
 
@@ -389,14 +473,4 @@ public class Image_20223138_ArmijoPalominos {
         }
         return resultado;
     }
-
-    public static int getWidth() {
-        return width;
-    }
-
-    public static int getHeight() {
-        return height;
-    }
-
-
 }

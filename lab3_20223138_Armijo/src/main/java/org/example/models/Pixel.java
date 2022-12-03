@@ -2,8 +2,17 @@ package org.example.models;
 
 public abstract class Pixel {
 
-    public abstract void setBit(int bit);
+    //--------------------------------------------
+    // Atributos.
+    //--------------------------------------------
+    private int x;
+    private int y;
+    private int depth;
 
+    //--------------------------------------------
+    // Getters and Setters
+    //--------------------------------------------
+    public abstract void setBit(int bit);
     public abstract int getBit();
     public abstract int getR();
     public abstract int getB();
@@ -11,14 +20,9 @@ public abstract class Pixel {
     public abstract void setR(int r);
     public abstract void setG(int g);
     public abstract void setB(int b);
-
     public abstract void setR(String hex);
-
     public abstract int getG();
     public abstract String getHex();
-
-    private int x;
-    private int y;
 
     public int getX() {
         return x;
@@ -44,13 +48,12 @@ public abstract class Pixel {
         this.depth = depth;
     }
 
+    //--------------------------------------------
+    // Constructor.
+    //--------------------------------------------
     public Pixel(int x, int y, int depth) {
         this.x = x;
         this.y = y;
         this.depth = depth;
     }
-
-    private int depth;
-
-
 }

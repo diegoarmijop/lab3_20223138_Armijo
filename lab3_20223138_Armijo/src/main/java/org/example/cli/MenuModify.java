@@ -80,5 +80,9 @@ public class MenuModify {
             System.out.println(this.image.invertColorRGB());
             System.out.println(this.image.toString());
         }
+        else{
+            MenuOption newMenuOption = new MenuOption(this.image);
+            newMenuOption.showMenuOption();
+        }
     }
 }

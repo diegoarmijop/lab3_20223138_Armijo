@@ -2,17 +2,16 @@ package org.example.models;
 
 public class Pixmap_20223138_ArmijoPalominos extends Pixel {
 
-    private int r=0;
-    private int g=0;
-    private int b=0;
+    //--------------------------------------------
+    // Atributos.
+    //--------------------------------------------
+    private int r;
+    private int g;
+    private int b;
 
-    public Pixmap_20223138_ArmijoPalominos(int x, int y, int depth, int r, int g, int b) {
-        super(x, y, depth);
-        this.r = r;
-        this.g = g;
-        this.b = b;
-    }
-
+    //--------------------------------------------
+    // Getters and Setters.
+    //--------------------------------------------
     public void setR(int r) {
         this.r = r;
     }
@@ -61,5 +60,15 @@ public class Pixmap_20223138_ArmijoPalominos extends Pixel {
     @Override
     public String getHex() {
         return null;
+    }
+
+    //--------------------------------------------
+    // Constructor.
+    //--------------------------------------------
+    public Pixmap_20223138_ArmijoPalominos(int x, int y, int depth, int r, int g, int b) {
+        super(x, y, depth);
+        this.r = r;
+        this.g = g;
+        this.b = b;
     }
 }

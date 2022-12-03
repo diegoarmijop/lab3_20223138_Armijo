@@ -54,15 +54,12 @@ public class MenuOption {
         } else if(option == 4){
             MenuModify menuModify = new MenuModify(this.image);
             menuModify.showMenuModify();
+        } else if(option == 5){
+            MenuMain menuMainaux = new MenuMain();
+            menuMainaux.showMenuMain();
+        }else{
+            System.out.println("Saliendo.....");
         }
-
-
-
     }
-
-
-
-
-
 }
 
