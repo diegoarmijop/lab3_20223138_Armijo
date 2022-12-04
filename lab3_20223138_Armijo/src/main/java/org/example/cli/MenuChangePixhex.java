@@ -25,7 +25,7 @@ public class MenuChangePixhex {
         Scanner sc = new Scanner(System.in);
         boolean error;
 
-        System.out.println("## Creacion de pixel tipo pixbit ##");
+        System.out.println("## Creacion de pixel tipo pixhex ##");
 
         do{
             error = false;

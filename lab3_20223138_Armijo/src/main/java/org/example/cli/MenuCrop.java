@@ -73,8 +73,7 @@ public class MenuCrop {
         } while (error) ;
 
         System.out.println(this.image.toString());
-        System.out.println(Image_20223138_ArmijoPalominos.crop(x1, y2, x2, y2));
+        System.out.println(this.image.crop(x1, y1, x2, y2));
         System.out.println(this.image.toString());
     }
-
 }

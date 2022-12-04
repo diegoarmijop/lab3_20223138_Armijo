@@ -12,17 +12,6 @@ public abstract class Pixel {
     //--------------------------------------------
     // Getters and Setters
     //--------------------------------------------
-    public abstract void setBit(int bit);
-    public abstract int getBit();
-    public abstract int getR();
-    public abstract int getB();
-    public abstract void setHex(String hex);
-    public abstract void setR(int r);
-    public abstract void setG(int g);
-    public abstract void setB(int b);
-    public abstract void setR(String hex);
-    public abstract int getG();
-    public abstract String getHex();
 
     public int getX() {
         return x;

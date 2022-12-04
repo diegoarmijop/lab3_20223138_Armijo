@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fd184f16-b4d3-4fef-97dc-ffb242eeeef1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuChangePixhex.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuChangePixhex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuCrop.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuCrop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuOption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuTypeImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/cli/MenuTypeImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Image_20223138_ArmijoPalominos.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Image_20223138_ArmijoPalominos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixbit_20223138_ArmijoPalominos.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixbit_20223138_ArmijoPalominos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixhex_20223138_ArmijoPalominos.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixhex_20223138_ArmijoPalominos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixmap_20223138_ArmijoPalominos.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/example/models/Pixmap_20223138_ArmijoPalominos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cli/MenuChangePixhex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cli/MenuChangePixhex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cli/MenuCrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cli/MenuCrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cli/MenuOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cli/MenuOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Image_20223138_ArmijoPalominos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Image_20223138_ArmijoPalominos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Pixbit_20223138_ArmijoPalominos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Pixbit_20223138_ArmijoPalominos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Pixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Pixel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Pixhex_20223138_ArmijoPalominos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Pixhex_20223138_ArmijoPalominos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Pixmap_20223138_ArmijoPalominos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Pixmap_20223138_ArmijoPalominos.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IPH08g7arenp2ckFWdb3EonhFV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/dvvp/Desktop/prueba111/lab3-paradigmas/lab3_20223138_Armijo",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd184f16-b4d3-4fef-97dc-ffb242eeeef1" name="Changes" comment="" />
+      <created>1670076073371</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670076073371</updated>
+      <workItem from="1670076075109" duration="5532000" />
+      <workItem from="1670101601261" duration="9527000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

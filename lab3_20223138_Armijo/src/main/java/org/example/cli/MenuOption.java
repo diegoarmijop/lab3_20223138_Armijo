@@ -37,7 +37,7 @@ public class MenuOption {
                 System.out.println("Debe ingresar una opción válida.");
                 error = true;
             }
-            if (!error && (option < 1 || option > 5)) {
+            if (!error && (option < 1 || option > 6)) {
                 System.out.println("Debe ingresar una opción válida");
                 error = true;
             }

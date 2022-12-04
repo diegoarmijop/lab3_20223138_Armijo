@@ -22,44 +22,16 @@ public class Pixmap_20223138_ArmijoPalominos extends Pixel {
         this.b = b;
     }
 
-    @Override
-    public void setBit(int bit) {
-
-    }
-
-    @Override
-    public int getBit() {
-        return 0;
-    }
-
-    @Override
     public int getR() {
         return r;
     }
 
-    @Override
-    public int getB() {
-        return b;
-    }
-
-    @Override
-    public void setHex(String hex) {
-
-    }
-
-    @Override
-    public void setR(String hex) {
-
-    }
-
-    @Override
     public int getG() {
         return g;
     }
 
-    @Override
-    public String getHex() {
-        return null;
+    public int getB() {
+        return b;
     }
 
     //--------------------------------------------

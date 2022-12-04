@@ -1,0 +1,26 @@
+Requerimientos Funcionales            Evaluación
+___________________________     |    ____________
+
+Clases y estructuras	          	  1
+Menu interactivo por terminal		  1
+constructor		          	  1
+isBitmap			 	  1
+isPixmap			          1
+isHexmap		  		  1
+isCompressed				  1
+flipH			 	  	  1
+flipV					  1
+crop					  1
+imgRGBToHex  				  1
+histogram 				  1
+rotate90				  1
+compress				  0
+changePixel				  1
+invertColorBit			          1
+invertColorRGB				  1
+toString				  1
+depthLayers				  0
+decompress				  0
+
+
+

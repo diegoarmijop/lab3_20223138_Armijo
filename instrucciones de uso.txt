@@ -1,0 +1,11 @@
+Lo primero que debemos hacer es instalar el JDK en su versión 11 (verificar que no
+existan otras versiones instaladas y de ser necesario establecer la versión 11 como
+principal).
+Para el caso de IntelliJ IDEA se debe abrir la carpeta del proyecto y ejecutar el
+programa (verificar que se encuentre la carpeta src). Cuando el programa se ejecute
+se deberá introducir una opción del menú.
+En el menú en primera instancia le pedirá al usuario el tipo de imagen que quiere
+crear (pixbit|pixmap|pixhex), luego lo dirigirá a otro menú el cual le permitirá elegir
+entre visualizar la imagen, ver a qué tipo pertenece la imagen, si la imagen está
+comprimida, modificar la imagen, crear una nueva imagen o salir del programa. Si
+elige modificar podrá acceder a la mayoría de los requerimientos funcionales.

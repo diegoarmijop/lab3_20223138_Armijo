@@ -18,50 +18,6 @@ public class Pixhex_20223138_ArmijoPalominos extends Pixel {
         this.hex = hex;
     }
 
-    @Override
-    public void setBit(int bit) {
-
-    }
-
-    @Override
-    public int getBit() {
-        return 0;
-    }
-
-    @Override
-    public int getR() {
-        return 0;
-    }
-
-    @Override
-    public int getB() {
-        return 0;
-    }
-
-    @Override
-    public void setR(int r) {
-
-    }
-
-    @Override
-    public void setG(int g) {
-
-    }
-
-    @Override
-    public void setB(int b) {
-
-    }
-
-    @Override
-    public void setR(String hex) {
-
-    }
-
-    @Override
-    public int getG() {
-        return 0;
-    }
 
     //--------------------------------------------
     // Constructor.
